@@ -1,7 +1,7 @@
-(function($) {
+(function($) {  
     // "use strict"; // Start of use strict
 
-    wow = new WOW({
+    wow = new WOW.WOW({
       animateClass: 'animated',
       offset: 100
     });
@@ -101,7 +101,7 @@
     });
 
     $(document).ready(function(){
-      
+
       $(".owl-carousel.owl-6").owlCarousel({
         // items:3,
         loop: true,
@@ -439,5 +439,5 @@
     
     
 
-  }); // End of use strict
+  })(jQuery); // End of use strict
   

@@ -1,3 +1,5 @@
+import Typed from 'typed.js';
+
 $(document).ready(function() {
 
 
@@ -15,16 +17,23 @@ $(document).ready(function() {
       $(this).blur()
     })
   
+
   
-    var typed = $(".typed");
-  
-    $(function() {
-      typed.typed({
+    // var typede = $(".typed");
+    var options = {
         strings: ["odelem.", "uzykiem.", "inistrantem."],
         typeSpeed: 50,
         loop: true,
-      });
-    });
+      }
+    var typed = new Typed('.typed', options);
+
+    // $(function() {
+    //   typed.typed({
+    //     strings: ["odelem.", "uzykiem.", "inistrantem."],
+    //     typeSpeed: 50,
+    //     loop: true,
+    //   });
+    // });
   
   
   
