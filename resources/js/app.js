@@ -11,7 +11,7 @@ WOW = require('wowjs');
 // require('slick');
 owlCarousel = require('owl.carousel');
 
-require('slick-carousel')
+require('slick-carousel');
 typed = require('typed.js');
 
 require('./main');
