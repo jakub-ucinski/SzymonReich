@@ -49248,18 +49248,17 @@ __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
 
 __webpack_require__(/*! @fortawesome/fontawesome-free */ "./node_modules/@fortawesome/fontawesome-free/js/fontawesome.js");
 
-jQuery = __webpack_require__(/*! jquery/dist/jquery */ "./node_modules/jquery/dist/jquery.js");
-$ = __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js");
+jQuery = __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js");
 
 __webpack_require__(/*! jquery.easing */ "./node_modules/jquery.easing/jquery.easing.js");
-
-__webpack_require__(/*! popper.js */ "./node_modules/popper.js/dist/esm/popper.js");
-
-__webpack_require__(/*! bootstrap */ "./node_modules/bootstrap/dist/js/bootstrap.js");
 
 __webpack_require__(/*! animate.css */ "./node_modules/animate.css/animate.css");
 
 WOW = __webpack_require__(/*! wowjs */ "./node_modules/wowjs/dist/wow.js"); // require('slick');
+
+__webpack_require__(/*! popper.js */ "./node_modules/popper.js/dist/esm/popper.js");
+
+__webpack_require__(/*! bootstrap */ "./node_modules/bootstrap/dist/js/bootstrap.js");
 
 owlCarousel = __webpack_require__(/*! owl.carousel */ "./node_modules/owl.carousel/dist/owl.carousel.js");
 
@@ -49317,7 +49316,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var typed_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! typed.js */ "./node_modules/typed.js/lib/typed.js");
 /* harmony import */ var typed_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(typed_js__WEBPACK_IMPORTED_MODULE_0__);
 
-$(document).ready(function () {
+
+(function ($) {
   $(function () {
     $('[data-toggle="popover"]').popover({
       offset: '-100px',
@@ -49378,7 +49378,7 @@ $(document).ready(function () {
       }
     });
   });
-});
+})(jQuery);
 
 /***/ }),
 

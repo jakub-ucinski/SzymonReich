@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 use App\Mail\HomeContactMail;
 use Illuminate\Support\Facades\Mail;
 
-class HomeController extends Controller
+class LandingController extends Controller
 {
     public function index()
     {
@@ -46,7 +46,7 @@ class HomeController extends Controller
                 $JSON_Data = json_decode($JSON);
                 $socialStats['youtube']['subscribers'] = $JSON_Data -> {'items'}['0'] -> {'statistics'} -> {'subscriberCount'};
 
-        return view('home', compact('socialStats'));
+        return view('landing.index', compact('socialStats'));
     }
 
     public function contact(Request $request)

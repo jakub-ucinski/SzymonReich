@@ -1,8 +1,7 @@
 require('./bootstrap');
 require('@fortawesome/fontawesome-free')
 
-// jQuery = require('jquery/dist/jquery');
-$ = require('jquery')
+jQuery = require('jquery');
 require('jquery.easing');
 
 require('animate.css');

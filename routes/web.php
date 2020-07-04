@@ -16,5 +16,5 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/products', 'ProductsController@index');
 
-Route::post('/contact', 'HomeController@contact');
-Route::get('/', 'HomeController@index');
+Route::post('/contact', 'LandingController@contact');
+Route::get('/', 'LandingController@index');

@@ -1,6 +1,6 @@
 import Typed from 'typed.js';
 
-$(document).ready(function() {
+(function($) {  
 
 
     $(function () {
@@ -78,4 +78,4 @@ $(document).ready(function() {
       });
     })
   
-  });
+  })(jQuery);
