@@ -62,7 +62,7 @@
                       <div class='align-buttom'>
                           <div class='highlighted_achivements'>
                               <div class='achievement'>
-                                  <div class='achievement_big'></div>
+                                  <div class='achievement_big'>{{ Str::substr($socialStats['instagram']['followers'], 0, 3).'k' }}</div>
                                   <div class='achievement_small'>obserwujących na Instagramie</div>
                               </div>
                               <div class='achievement'>
@@ -85,7 +85,7 @@
                       <div class='align-buttom'>
                           <div class='highlighted_achivements'>
                               <div class='achievement'>
-                                  <div class='achievement_big'></div>
+                              <div class='achievement_big'>{{ Str::substr($socialStats['youtube']['muzykViews'], 0, 3).'k' }}</div>
                                   <div class='achievement_small'>Wyswietleń na Youtube</div>
                               </div>
                               <div class='achievement'>
@@ -123,16 +123,6 @@
               </div>
   
           </div>
-  
-  
-  
-          
-  
-          
-  
-  
-  
-  
       </div>
   
       <img class='big_transparent wow fadeInRight' src="img/big_szymon.png" alt="">
@@ -161,9 +151,9 @@
               <div id='statistics' class='achievement_content'>
                   <h2 class='achievement_slider_title'>Statystyki i zasięgi</h2>
                   <div class='owl-carousel owl-6 section_items'>
-                      <p class='item'><span class='big_stat'></span><span class='small_stat'>Obserwujących na Instagramie</span></p>
-                      <p class='item'><span class='big_stat'></span><span class='small_stat'>Wyświetleń kanału "Szymon Reich"</span></p>
-                      <p class='item'><span class='big_stat'></span><span class='small_stat'>Sybskrybentów kanału "Szymon Reich"</span></p>
+                      <p class='item'><span class='big_stat'>{{ Str::substr($socialStats['instagram']['followers'], 0, 3).'k' }}</span><span class='small_stat'>Obserwujących na Instagramie</span></p>
+                      <p class='item'><span class='big_stat'>{{ Str::substr($socialStats['youtube']['totalViews'], 0, 3).'k' }}</span><span class='small_stat'>Wyświetleń kanału "Szymon Reich"</span></p>
+                  <p class='item'><span class='big_stat'>{{ Str::substr($socialStats['youtube']['subscribers'], 0, 1).'k' }}</span><span class='small_stat'>Sybskrybentów kanału "Szymon Reich"</span></p>
                       <p class='item'><span class='big_stat'>2</span><span class='small_stat'>Single (album wkrótce)</span></p>
                       <p class='item'><span class='big_stat'>62k</span><span class='small_stat'>Odsłuchań na Spotify</span></p>
                       <p class='item'><span class='big_stat'>11k</span><span class='small_stat'>Zainspirowanych na wystąpieniach publicznych</span></p>
@@ -207,13 +197,20 @@
                   <div class="contact-section-heading">Zaproszenie do szkoły - miasta - parafii</div>
                       <p id="contact-text" class=''>Jeżeli chciałbyś mnie zaprosić do swojej szkoły/miasta/parafii, to świetnie! Wypełnij poniższy formularz kontaktowy - przedstaw się i podaj mi kilka szczegółów. Niebawem odezwie się do Ciebie ktoś z mojego zespołu, aby domówić szczegóły.</p>
   
-                      <form method="post" action='/index.php/contact'>
+                      <form method="post" action='/contact' class="needs-validation" novalidate>
+                        @csrf
                           <div class="message-form form-row">
   
                               <div class="form-group col-md-6">
-                                  <label for="name">Imię i Nazwisko</label>
-                                  <input class='form-control' id='name' type="name" name="name" value="<?php echo !empty($postData['name'])?$postData['name']:''; ?>" placeholder="Jan Kowalski" required>
-                              </div>
+                                    <label for="name">Imię i Nazwisko</label>
+                                    <input class='form-control' id='name' type="name" name="name" value="" placeholder="Jan Kowalski" required>
+                                    <div class="valid-feedback">
+                                        Wygląda dobrze!
+                                    </div>
+                                    <div class="invalid-feedback">
+                                        Proszę podać Imię i Nazwisko.                   
+                                    </div>
+                            </div>
                               
                               <!-- <div class="form-group">
                                   <label for="representation">Reprezentuję:</label>
@@ -225,40 +222,90 @@
   
                               <div class="form-group col-md-6">
                                   <label for="representation">Reprezentuję:</label>
-                                  <input class='form-control' id='representation' type="representation" name="representation" value="<?php echo !empty($postData['representation'])?$postData['representation']:''; ?>" placeholder="Szkołę/Parafię w ..." required>
-                              </div>
+                                  <input class='form-control' id='representation' type="representation" name="representation" value="" placeholder="Szkołę/Parafię w ..." required>
+                                  <div class="valid-feedback">
+                                    Wygląda dobrze!
+                                </div>
+                                <div class="invalid-feedback">
+                                    Proszę wypełnić pole.                   
+                                </div>
+                                </div>
                               <div class="form-group col-md-6">
                                   <label for="email">Adres email</label>
                                   <input class='form-control' id='email' type="email" name="email" value="<?php echo !empty($postData['email'])?$postData['email']:''; ?>" placeholder="adres@email.com" required>
-                              </div>
+                              
+                                  <div class="valid-feedback">
+                                    Wygląda dobrze!
+                                </div>
+                                <div class="invalid-feedback">
+                                    Proszę podać poprawny adres email.                   
+                                </div>
+                                </div>
                               <div class="form-group col-md-6">
                                   <label for="phone">Numer telefonu</label>
                                   <input class='form-control' id='phone' type="phone" name="phone" value="<?php echo !empty($postData['phone'])?$postData['phone']:''; ?>" placeholder="Numer telefonu" required>
-                              </div>
+                                  <div class="valid-feedback">
+                                    Wygląda dobrze!
+                                </div>
+                                <div class="invalid-feedback">
+                                    Proszę podać numer telefonu.                 
+                                </div>  
+                                </div>
   
                               <div class="form-group col-md-12">
                                   <label for="message">Wiadomość</label>
                                   <textarea class='form-control' id='message' name="message" placeholder="Wiadomość" rows="5" required><?php echo !empty($postData['message'])?$postData['message']:''; ?></textarea>
-                              </div>
+                                  <div class="valid-feedback">
+                                    Wygląda dobrze!
+                                </div>
+                                <div class="invalid-feedback">
+                                    Proszę napisać wiadomość.                 
+                                </div>
+                             
+                                </div>
                           </div>
-                          <div class="g-recaptcha" data-sitekey="6LfIn-UUAAAAAAmRyGt1r13F62fteA2XOoI1u8Zj"></div>
+                          {{-- <div class="g-recaptcha" data-sitekey="6LfIn-UUAAAAAAmRyGt1r13F62fteA2XOoI1u8Zj"></div> --}}
                           <input type="submit" name="contactSubmit" class="btn" id='contact-form-submit' value="Wyślij">
   
   
                       </form>
                           <!-- Display the status message -->
-                      <?php if(!empty($status)){ ?>
-                          <div class="alert <?php echo $status['type']; ?> alert-dismissible fade show"><?php echo $status['msg']; ?>
-                              <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                                  <span aria-hidden="true">&times;</span>
-                              </button>
-                          </div>
-                      <?php } ?>
+                     
+                      @if (count($errors) > 0)
+                        <div class="alert error alert-dismissible fade show">
+                            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                            <ul class='mb-0'>
+                                @foreach ($errors->all() as $error)
+                                    <li>{{ $error }}</li>
+                                @endforeach
+                            </ul>
+                        </div>
+                    @endif
+                    @if ($response = Session::get('response'))
+                        <div class="alert {{ $response['status'] }} alert-dismissible fade show">{{  $response['message'] }}
+                            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                    @endif
   
               </div>
               
           </div>
       </div>
+      {{-- <script>
+        function validateCaptcha() {
+
+            if (!grecaptcha.getResponse()) {
+                document.getElementById('recaptcha-error').innerHTML ='<p class="field-error">The recaptcha field is required</p>';
+                return false;
+            }
+            return true;
+            
+        }
+    </script> --}}
   </section>
 @endsection
 
