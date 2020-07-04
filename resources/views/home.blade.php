@@ -31,7 +31,7 @@
   
   
   <section id='about_section'>
-      <div class='container wow fadeInLeft'>
+      <div class='container wow animate__animated animate__fadeInLeft'>
           <h2 class='section_heading'>Słowo o mnie...</h2>
           <div class='section-content'>
               <div class="general-about">
@@ -124,12 +124,13 @@
   
           </div>
       </div>
-  
-      <img class='big_transparent wow fadeInRight' src="img/big_szymon.png" alt="">
-  
+      
+      {{-- <img class='big_transparent wow fadeInRight' src="img/big_szymon.png" alt=""> --}}
+      <img class='big_transparent wow animate__animated animate__fadeInRight' src="img/big_szymon.png" alt="">
+
   </section>
   
-  <section id='achievement_slider_section' class='wow fadeInUp'>
+  <section id='achievement_slider_section' class='wow animate__animated animate__fadeInUp'>
       <div class="progress" style="height: 3px;">
           <div class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
       </div>
@@ -184,16 +185,16 @@
   
   <section id='contact-section' class=''>
       <div class="container">
-          <h2 id="contact-head" class='wow fadeInDown delay-05'>Kontakt</h2>
+          <h2 id="contact-head" class='wow animate__animated animate__fadeInDown delay-05'>Kontakt</h2>
           <div class="content">
-              <div class="wow fadeInRight" id='contact-info'>
+              <div class="wow animate__animated animate__fadeInRight" id='contact-info'>
                   <div class="contact-section-heading">Współpraca komercyjna</div>
                   <div class="contact-section-content">
                       <a class="item" href='mailto:szymon@reichsmanagement.com'><i class="fas fa-at"></i><div class="item-text">szymon@reichsmanagement.com</div></a>
                       <div class="item"><i class="fab fa-whatsapp"></i><div class="item-text">+49 157 55714434 • WhatsApp</div></div>
                   </div>
               </div>
-              <div class="wow fadeInLeft" id='contact-form'>
+              <div class="wow animate__animated animate__fadeInLeft" id='contact-form'>
                   <div class="contact-section-heading">Zaproszenie do szkoły - miasta - parafii</div>
                       <p id="contact-text" class=''>Jeżeli chciałbyś mnie zaprosić do swojej szkoły/miasta/parafii, to świetnie! Wypełnij poniższy formularz kontaktowy - przedstaw się i podaj mi kilka szczegółów. Niebawem odezwie się do Ciebie ktoś z mojego zespołu, aby domówić szczegóły.</p>
   

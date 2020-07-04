@@ -3,8 +3,6 @@
     <head>
         
         @include('layouts.partials.head')
-
-
     </head>
 
     <body data-spy="scroll" data-target='#main-nav' data-offset='100'>
