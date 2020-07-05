@@ -29,4 +29,11 @@ Route::group(['prefix' => 'auth'], function () {
 });
 // Auth::routes(['register' => false]);
 
+Route::post('/admin/products', 'Admin\ProductsController@store')->name('products.store');
+
+Route::get('/admin/products/create', 'Admin\ProductsController@create');
+
+
+Route::get('/admin/products', 'Admin\ProductsController@index');
+
 Route::get('/admin', 'AdminController@index')->name('admin');

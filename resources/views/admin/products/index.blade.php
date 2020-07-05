@@ -23,7 +23,7 @@
 
 <div class="container">
     <div class="row justify-content-center">
-    
+        <p>products cms page</p>
     </div>
 </div>
 
