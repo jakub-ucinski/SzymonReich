@@ -18,3 +18,15 @@ Route::get('/products', 'ProductsController@index');
 
 Route::post('/contact', 'LandingController@contact');
 Route::get('/', 'LandingController@index');
+//Auth::routes();
+
+
+// Authentication Routes...
+Route::group(['prefix' => 'auth'], function () {
+
+    Auth::routes();
+
+});
+// Auth::routes(['register' => false]);
+
+Route::get('/admin', 'AdminController@index')->name('admin');
