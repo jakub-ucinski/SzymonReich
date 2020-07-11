@@ -93,7 +93,7 @@
             <div class="container-fluid">
         
               <div class="navbar-brand logo">
-                <a class='js-scroll-trigger' href="/#header"><img src="img/logo.png" alt="logo"></a>
+                <a class='js-scroll-trigger' href="/#header"><img src="/img/logo.png" alt="logo"></a>
               </div>
         
               <!-- <div class="responsive"><i data-icon="m" class="ion-navicon-round"></i></div> -->

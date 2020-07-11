@@ -6,10 +6,12 @@ use Illuminate\Database\Eloquent\Model;
 
 class Product extends Model
 {
-    protected $casts = [
-        'images' => 'array'
-    ];
-
+    protected $guarded = [];
     
 
+
+    public function images()
+    {
+        return $this->hasMany(ProductImage::class);
+    }
 }

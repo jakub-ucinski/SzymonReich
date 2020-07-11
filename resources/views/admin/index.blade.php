@@ -21,11 +21,17 @@
     </div>
 </div> --}}
 
-<div class="container">
-    <div class="row justify-content-center">
-    
-    </div>
+
+<div class="d-flex align-items-center justify-content-between">
+    <h1>Home</h1>
+    {{-- <a href="/admin/products/create" type="button" class="button">
+        <i class="fas fa-plus"></i>
+    </a> --}}
 </div>
+
+<script>
+    document.getElementById('home-side-link').classList.add('active');
+</script>
 
 
 @endsection

@@ -18,7 +18,11 @@ class CreateProductsTable extends Migration
             $table->string('title');
             $table->text('description');
             $table->float('price');
-            $table->json('images_urls');
+            $table->integer('order')->nullable();
+            $table->integer('stock');
+            $table->boolean('limited');
+
+            // $table->json('images');
             $table->timestamps();
         });
     }

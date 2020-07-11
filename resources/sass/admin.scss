@@ -1,0 +1,183 @@
+body#admin{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    gap: 1px 1px;
+    grid-template-areas: "navbar navbar navbar navbar navbar" "nav-left content content content content" "nav-left content content content content" "nav-left content content content content" "nav-left content content content content" "nav-left content content content content" "nav-left content content content content" "nav-left content content content content";
+
+    //.navbar { }
+    nav.navbar{
+        grid-area: navbar; 
+        background-color: #82B6AA;
+        //color: white;
+        a.navbar-brand{
+            width: 150px;
+            
+            img{
+                width: 100%;
+                height: auto;
+            }
+        }
+        .nav-item{
+            .nav-link{
+                color: white;
+                font-size: 1.2em;
+            }
+        }
+    }
+
+    nav.navbar-left { 
+        position: relative;
+        grid-area: nav-left;
+        background-color: #F1F7F7;
+        padding: 60px 0px;
+        border-right: 5px solid #82B6AA;
+        ul{
+            flex-direction: column;
+            .nav-item{
+                margin-right: 40px;
+
+                .nav-link{
+                    padding: 0;
+                    text-align: left;
+                    font-size: 1.2em;
+                    color: #82B6AA;
+                    letter-spacing: 0;
+                    border-bottom: 2px solid;
+                    transition-duration: 0.35s;
+                    &:hover{
+                        color: #993E2A;
+                    }
+                    i{
+                        float: right;
+                    }
+                   
+                }
+                &.active{
+                    .nav-link{
+                        color: #993E2A;
+                    }
+                }
+            }
+            p{
+                // margin-right: 15px;
+                font-family: "Poppins", sans-serif;
+                font-size: 2.6em;
+                font-weight: 600;
+                color: #993E2A;
+                // margin-top: 50px;
+                // margin-bottom: 25px;
+                // margin-left: 40px;
+
+                margin: 50px 15px 25px 40px;
+                text-align: left;
+                text-transform: uppercase;
+            }
+        } 
+    }
+
+    .content{
+        grid-area: content;
+        overflow-y: scroll;
+        padding: 50px;
+        .button{
+            height: 35px;
+            width: 35px;
+            background-color: #82B6AA;
+            color: white;
+            justify-content: center;
+            display: flex;
+            align-items: center;
+            font-size: 1.2em;
+            border: none;
+
+            &:hover{
+                text-decoration: none;
+            }
+            // i{
+
+            // }
+        }
+
+        h1{
+            color: #993E2A;
+            text-transform: uppercase;
+            font-size: 4em;
+            font-weight: 700;
+        }
+        
+        table{
+            width: 100%;
+            colgroup{
+                col{
+                    background-color: #E4F2F2;
+                    border: 2px solid white;
+                    &:nth-child(2n) {background: #F1F7F7}
+
+                }
+            }
+            tr{
+                height: max-content;
+                min-height: 100px;
+                border-bottom: 5px solid white;
+                th{
+                    padding: 20px;
+                    height: 30px;
+                    color: #82B6AA;
+                    font-size: 1.3em;
+                }
+                td{
+                    padding: 20px;
+                    height: 50px;
+
+                    img{
+                        height: 30px;
+                        width: auto;
+                        border: 1px solid #82B6AA;
+                    }
+                }
+
+            }
+
+
+        }
+    }
+    form{
+        .form-group{
+            label{
+                color: #993e2a;
+                font-weight: 500;
+            }
+
+            .form-control{
+                border: 1px solid #993e2a;
+                border-radius: 0;
+            }
+
+            button{
+                background-color: #82B6AA;
+                border-radius: 0;
+                border: none;
+            }
+        }
+    }
+        .img-index{
+            display: flex;
+            flex-wrap: wrap;
+            width: 300px;
+            img{
+                height: 60px;
+                width: auto;
+                border: 1px solid #82B6AA;
+
+               
+            }
+        }
+    
+    
+    
+}
+
+
+  
+  
