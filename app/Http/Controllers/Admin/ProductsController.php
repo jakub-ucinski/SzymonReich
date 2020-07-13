@@ -16,7 +16,7 @@ class ProductsController extends Controller
 
     public function index()
     {
-        $products = Product::all()->sortBy('order');
+        $products = Product::with('images')->orderBy('order')->get();
         
         return view('admin.products.index', compact('products'));
     }
@@ -34,7 +34,6 @@ class ProductsController extends Controller
             'price' => ['regex:/^(?=.+)(?:[1-9]\d*|0)?(?:\.\d+)?$/', 'required', 'max:10'],
             'images' => 'required',
             'stock' => ['required', 'integer'],
-            'order' => ['nullable', 'integer'],
             'limited' => ''
         ]);
 
@@ -45,7 +44,7 @@ class ProductsController extends Controller
             'description' => $data['description'],
             'price' => $data['price'],
             'stock' => $data['stock'],
-            'order' => $data['order'] ?? count(Product::all())+1,
+            'order' => count(Product::all())+1,
             'limited' => isset($data['limited']) ? true : false
             ]);
         
@@ -100,7 +99,6 @@ class ProductsController extends Controller
             'price'=> ['regex:/^(?=.+)(?:[1-9]\d*|0)?(?:\.\d+)?$/', 'max:10'],
             'images'=> '',
             'stock' => ['required', 'integer'],
-            'order' => ['required', 'integer'],
             'limited' => ''
         ]);
 
@@ -109,7 +107,6 @@ class ProductsController extends Controller
             'description' => $data['description'],
             'price' => $data['price'],
             'stock' => $data['stock'],
-            'order' => $data['order'],
             'limited' => isset($data['limited']) ? true : false
             ]);
 
@@ -144,6 +141,25 @@ class ProductsController extends Controller
         return redirect()->route('products.index');
     }
 
+
+
+    public function updateall(Request $request)
+    {
+        
+        Product::truncate();
+        foreach ($request->products as $product) {
+            Product::create([
+                'id' => $product['id'],
+                'title' => $product['title'],
+                'description' => $product['description'],
+                'price' => $product['price'],
+                'stock' => $product['stock'],
+                'order' => $product['order'],
+                'limited' => isset($product['limited']) ? true : false
+                ]);
+        }
+        return response('Update Successful', 200);
+    }
 
 
 }
