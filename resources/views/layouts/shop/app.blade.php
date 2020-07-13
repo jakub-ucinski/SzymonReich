@@ -84,7 +84,7 @@
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
     <head>
         
-        @include('layouts.products.partials.head')
+        @include('layouts.shop.partials.head')
     </head>
 
     <body data-spy="scroll" data-target='#main-nav' data-offset='100'>
@@ -106,7 +106,7 @@
                   <li class='navbar-item nav-item'><a href="/#about_section" class="nav-link js-scroll-trigger hvr-backward"><i class="fas fa-question"></i></i>O mnie</a></li>
                   <li class='navbar-item nav-item'><a href="/#contact-section" class="nav-link js-scroll-trigger hvr-backward"><i class="fas fa-envelope"></i>Kontakt</a></li>
                   <!-- <li class='navbar-item nav-item'><a href="#" class="nav-link">|</a></li> -->
-                  <li id='shop-li' class='navbar-item nav-item'><a href="/products" class="nav-link hvr-backward"><i class="fas fa-shopping-cart"></i>Sklep</a></li>
+                  <li id='shop-li' class='navbar-item nav-item'><a href="/shop" class="nav-link hvr-backward"><i class="fas fa-shopping-cart"></i>Sklep</a></li>
 
                   @guest
                             <li class="nav-item">
@@ -144,7 +144,7 @@
         </nav>
 
         @yield('content')
-        @include('layouts.products.partials.footer')
+        @include('layouts.shop.partials.footer')
         <script src="{{ asset('js/app.js') }}"></script>
         {{-- <script src="/public/js/app.js"></script> --}}
 
