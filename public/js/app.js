@@ -4419,8 +4419,6 @@ module.exports = {
 
 /***/ }),
 
-<<<<<<< HEAD
-=======
 /***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/ProductsDraggable.vue?vue&type=script&lang=js&":
 /*!****************************************************************************************************************************************************************************!*\
   !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/ProductsDraggable.vue?vue&type=script&lang=js& ***!
@@ -4529,7 +4527,6 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
->>>>>>> feature/DraggableProducts
 /***/ "./node_modules/bootstrap/dist/js/bootstrap.js":
 /*!*****************************************************!*\
   !*** ./node_modules/bootstrap/dist/js/bootstrap.js ***!
@@ -54494,22 +54491,6 @@ var initProxy;
   };
 }
 
-<<<<<<< HEAD
-/***/ "./node_modules/vue/dist/vue.common.dev.js":
-/*!*************************************************!*\
-  !*** ./node_modules/vue/dist/vue.common.dev.js ***!
-  \*************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-/* WEBPACK VAR INJECTION */(function(global, setImmediate) {/*!
- * Vue.js v2.6.11
- * (c) 2014-2019 Evan You
- * Released under the MIT License.
- */
-
-=======
 /*  */
 
 var seenObjects = new _Set();
@@ -54930,7 +54911,6 @@ function resolveSlots (
 function isWhitespace (node) {
   return (node.isComment && !node.asyncFactory) || node.text === ' '
 }
->>>>>>> feature/DraggableProducts
 
 /*  */
 
@@ -67890,10 +67870,6 @@ window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 /*!*******************************************************!*\
   !*** ./resources/js/components/ProductsDraggable.vue ***!
   \*******************************************************/
-<<<<<<< HEAD
-/*! exports provided: default */
-/***/ (function(module, exports) {
-=======
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -67955,9 +67931,7 @@ __webpack_require__.r(__webpack_exports__);
 
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_ProductsDraggable_vue_vue_type_template_id_4794fd2e___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
 
->>>>>>> feature/DraggableProducts
 
-throw new Error("Module build failed (from ./node_modules/vue-loader/lib/index.js):\nError: ENOENT: no such file or directory, open 'C:\\Laravel-development\\QoQos\\resources\\js\\components\\ProductsDraggable.vue'");
 
 /***/ }),
 
