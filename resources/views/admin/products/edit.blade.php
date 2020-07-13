@@ -91,7 +91,8 @@
     </div>
 </div> --}}
 
-<h1>{{ $product->title }}</h1>
+<div for='pages-products' class="cms-page">
+    <h1>{{ $product->title }}</h1>
 <a type="button" href="{{ route('products.index') }}" class="button mr-2">
     <i class="fas fa-arrow-left"></i>                    
 </a>
@@ -168,18 +169,6 @@
                         </div>
 
                         <div class="form-group w-50">
-                            <label for="order" class="col-form-label">Order</label>
-
-                                <input id="order" type="number" value="{{ $product->order }}" class="form-control @error('order') is-invalid @enderror" name="order" value="{{ old('order') }}" autocomplete="order" autofocus>
-
-                                @error('order')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
-                        </div>
-
-                        <div class="form-group w-50">
 
                             <div class="form-check form-check-inline">
                                 <input class="form-check-input" type="checkbox" id="limited" value="1" name="limited">
@@ -211,10 +200,5 @@
                         @endforeach
                     </div>
                     
-
-
-
-    <script>
-        document.getElementById('products-side-link').classList.add('active');
-    </script>
+</div>
 @endsection

@@ -36813,7 +36813,7 @@ footer .bold {
   }
 }
 
-body#admin {
+body#admin #app {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
   grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
@@ -36821,26 +36821,26 @@ body#admin {
   grid-template-areas: "navbar navbar navbar navbar navbar" "nav-left content content content content" "nav-left content content content content" "nav-left content content content content" "nav-left content content content content" "nav-left content content content content" "nav-left content content content content" "nav-left content content content content";
 }
 
-body#admin nav.navbar {
+body#admin #app nav.navbar {
   grid-area: navbar;
   background-color: #82B6AA;
 }
 
-body#admin nav.navbar a.navbar-brand {
+body#admin #app nav.navbar a.navbar-brand {
   width: 150px;
 }
 
-body#admin nav.navbar a.navbar-brand img {
+body#admin #app nav.navbar a.navbar-brand img {
   width: 100%;
   height: auto;
 }
 
-body#admin nav.navbar .nav-item .nav-link {
+body#admin #app nav.navbar .nav-item .nav-link {
   color: white;
   font-size: 1.2em;
 }
 
-body#admin nav.navbar-left {
+body#admin #app nav.navbar-left {
   position: relative;
   grid-area: nav-left;
   background-color: #F1F7F7;
@@ -36848,15 +36848,15 @@ body#admin nav.navbar-left {
   border-right: 5px solid #82B6AA;
 }
 
-body#admin nav.navbar-left ul {
+body#admin #app nav.navbar-left ul {
   flex-direction: column;
 }
 
-body#admin nav.navbar-left ul .nav-item {
+body#admin #app nav.navbar-left ul .nav-item {
   margin-right: 40px;
 }
 
-body#admin nav.navbar-left ul .nav-item .nav-link {
+body#admin #app nav.navbar-left ul .nav-item .nav-link {
   padding: 0;
   text-align: left;
   font-size: 1.2em;
@@ -36866,19 +36866,19 @@ body#admin nav.navbar-left ul .nav-item .nav-link {
   transition-duration: 0.35s;
 }
 
-body#admin nav.navbar-left ul .nav-item .nav-link:hover {
+body#admin #app nav.navbar-left ul .nav-item .nav-link:hover {
   color: #993E2A;
 }
 
-body#admin nav.navbar-left ul .nav-item .nav-link i {
+body#admin #app nav.navbar-left ul .nav-item .nav-link i {
   float: right;
 }
 
-body#admin nav.navbar-left ul .nav-item.active .nav-link {
+body#admin #app nav.navbar-left ul .nav-item.active .nav-link {
   color: #993E2A;
 }
 
-body#admin nav.navbar-left ul p {
+body#admin #app nav.navbar-left ul p {
   font-family: "Poppins", sans-serif;
   font-size: 2.6em;
   font-weight: 600;
@@ -36888,13 +36888,13 @@ body#admin nav.navbar-left ul p {
   text-transform: uppercase;
 }
 
-body#admin .content {
+body#admin #app .content {
   grid-area: content;
   overflow-y: scroll;
   padding: 50px;
 }
 
-body#admin .content .button {
+body#admin #app .content .button {
   height: 35px;
   width: 35px;
   background-color: #82B6AA;
@@ -36906,31 +36906,31 @@ body#admin .content .button {
   border: none;
 }
 
-body#admin .content .button:hover {
+body#admin #app .content .button:hover {
   text-decoration: none;
 }
 
-body#admin .content h1 {
+body#admin #app .content h1 {
   color: #993E2A;
   text-transform: uppercase;
   font-size: 4em;
   font-weight: 700;
 }
 
-body#admin .content table {
+body#admin #app .content table {
   width: 100%;
 }
 
-body#admin .content table colgroup col {
+body#admin #app .content table colgroup col {
   background-color: #E4F2F2;
   border: 2px solid white;
 }
 
-body#admin .content table colgroup col:nth-child(2n) {
+body#admin #app .content table colgroup col:nth-child(2n) {
   background: #F1F7F7;
 }
 
-body#admin .content table tr {
+body#admin #app .content table tr {
   height: -webkit-max-content;
   height: -moz-max-content;
   height: max-content;
@@ -36938,49 +36938,61 @@ body#admin .content table tr {
   border-bottom: 5px solid white;
 }
 
-body#admin .content table tr th {
+body#admin #app .content table tr th {
   padding: 20px;
   height: 30px;
   color: #82B6AA;
   font-size: 1.3em;
 }
 
-body#admin .content table tr td {
+body#admin #app .content table tr td {
   padding: 20px;
   height: 50px;
 }
 
-body#admin .content table tr td img {
+body#admin #app .content table tr td img {
   height: 30px;
   width: auto;
   border: 1px solid #82B6AA;
 }
 
-body#admin form .form-group label {
+body#admin #app form .form-group label {
   color: #993e2a;
   font-weight: 500;
 }
 
-body#admin form .form-group .form-control {
+body#admin #app form .form-group .form-control {
   border: 1px solid #993e2a;
   border-radius: 0;
 }
 
-body#admin form .form-group button {
+body#admin #app form .form-group button {
   background-color: #82B6AA;
   border-radius: 0;
   border: none;
 }
 
-body#admin .img-index {
+body#admin #app .img-index {
   display: flex;
   flex-wrap: wrap;
   width: 300px;
 }
 
-body#admin .img-index img {
+body#admin #app .img-index img {
   height: 60px;
   width: auto;
   border: 1px solid #82B6AA;
+}
+
+body#admin #app .sortable-drag {
+  opacity: 0;
+}
+
+body#admin #app .my-handle {
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  color: #82b6aa;
+  font-size: 1.5em;
 }
 

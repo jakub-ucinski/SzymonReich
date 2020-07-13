@@ -84,7 +84,7 @@
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
     <head>
         
-        @include('layouts.landing.partials.head')
+        @include('layouts.shop.partials.head')
     </head>
 
     <body data-spy="scroll" data-target='#main-nav' data-offset='100'>
@@ -93,7 +93,7 @@
             <div class="container-fluid">
         
               <div class="navbar-brand logo">
-                <a class='js-scroll-trigger' href="/#header"><img src="/img/logo.png" alt="logo"></a>
+                <a class='js-scroll-trigger' href="/#header"><img src="img/logo.png" alt="logo"></a>
               </div>
         
               <!-- <div class="responsive"><i data-icon="m" class="ion-navicon-round"></i></div> -->
@@ -144,7 +144,7 @@
         </nav>
 
         @yield('content')
-        @include('layouts.landing.partials.footer')
+        @include('layouts.shop.partials.footer')
         <script src="{{ asset('js/app.js') }}"></script>
         {{-- <script src="/public/js/app.js"></script> --}}
 

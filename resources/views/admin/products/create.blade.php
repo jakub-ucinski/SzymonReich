@@ -91,110 +91,97 @@
     </div>
 </div> --}}
 
-<h1>New Product</h1>
-                    <a type="button" href="{{ route('products.index') }}" class="button mr-2">
-                        <i class="fas fa-arrow-left"></i>                    
-                    </a>
+<div for='pages-products' class="cms-page">
+    <h1>New Product</h1>
+    <a type="button" href="{{ route('products.index') }}" class="button mr-2">
+        <i class="fas fa-arrow-left"></i>                    
+    </a>
 
-                    <form method="POST" enctype="multipart/form-data" action="{{ route('products.store') }}">
-                        @csrf
+    <form method="POST" enctype="multipart/form-data" action="{{ route('products.store') }}">
+        @csrf
 
-                        <div class="form-group w-50">
-                            <label for="title" class="col-form-label">Title</label>
+        <div class="form-group w-50">
+            <label for="title" class="col-form-label">Title</label>
 
-                                <input id="title" type="text" class="form-control @error('title') is-invalid @enderror" name="title" value="{{ old('title') }}" required autocomplete="title" autofocus>
+                <input id="title" type="text" class="form-control @error('title') is-invalid @enderror" name="title" value="{{ old('title') }}" required autocomplete="title" autofocus>
 
-                                @error('title')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
-                        </div>
+                @error('title')
+                    <span class="invalid-feedback" role="alert">
+                        <strong>{{ $message }}</strong>
+                    </span>
+                @enderror
+        </div>
 
 
-                        <div class="form-group w-50">
-                            <label for="description" class="col-form-label">Description</label>
+        <div class="form-group w-50">
+            <label for="description" class="col-form-label">Description</label>
 
-                                <textarea id="description" type="text" class="form-control @error('description') is-invalid @enderror" name="description" value="{{ old('description') }}" required autocomplete="description" rows="6" autofocus></textarea>
-                                @error('description')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
-                        </div>
+                <textarea id="description" type="text" class="form-control @error('description') is-invalid @enderror" name="description" value="{{ old('description') }}" required autocomplete="description" rows="6" autofocus></textarea>
+                @error('description')
+                    <span class="invalid-feedback" role="alert">
+                        <strong>{{ $message }}</strong>
+                    </span>
+                @enderror
+        </div>
 
-                        <div class="form-group w-50">
-                            <label for="price" class="col-form-label">Price</label>
+        <div class="form-group w-50">
+            <label for="price" class="col-form-label">Price</label>
 
-                                <input id="price" type="text" class="form-control @error('price') is-invalid @enderror" name="price" value="{{ old('price') }}" required autocomplete="price" autofocus>
+                <input id="price" type="text" class="form-control @error('price') is-invalid @enderror" name="price" value="{{ old('price') }}" required autocomplete="price" autofocus>
 
-                                @error('price')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
-                        </div>
+                @error('price')
+                    <span class="invalid-feedback" role="alert">
+                        <strong>{{ $message }}</strong>
+                    </span>
+                @enderror
+        </div>
 
-                        <div class="form-group w-50">
-                            <label for="images" class="col-form-label">Images</label>
+        <div class="form-group w-50">
+            <label for="images" class="col-form-label">Images</label>
 
-                                <input id="images" type="file" class="@error('images') is-invalid @enderror form-control-file" name="images[]" value="{{ old('images') }}" required autocomplete="images" autofocus multiple>
+                <input id="images" type="file" class="@error('images') is-invalid @enderror form-control-file" name="images[]" value="{{ old('images') }}" required autocomplete="images" autofocus multiple>
 
-                                @error('images')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
-                                
-                                @if(session('imageresponse'))
-                                <span class="invalid-feedback d-block" role="alert">
-                                    <strong>{{ session('imageresponse') }}</strong>
-                                </span>
-                                @endif
-                        </div>
+                @error('images')
+                    <span class="invalid-feedback" role="alert">
+                        <strong>{{ $message }}</strong>
+                    </span>
+                @enderror
+                
+                @if(session('imageresponse'))
+                <span class="invalid-feedback d-block" role="alert">
+                    <strong>{{ session('imageresponse') }}</strong>
+                </span>
+                @endif
+        </div>
 
-                        <div class="form-group w-50">
-                            <label for="stock" class="col-form-label">Stock</label>
+        <div class="form-group w-50">
+            <label for="stock" class="col-form-label">Stock</label>
 
-                                <input id="stock" type="number" class="form-control @error('stock') is-invalid @enderror" name="stock" value="{{ old('stock') }}" required autocomplete="stock" autofocus>
+                <input id="stock" type="number" class="form-control @error('stock') is-invalid @enderror" name="stock" value="{{ old('stock') }}" required autocomplete="stock" autofocus>
 
-                                @error('stock')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
-                        </div>
+                @error('stock')
+                    <span class="invalid-feedback" role="alert">
+                        <strong>{{ $message }}</strong>
+                    </span>
+                @enderror
+        </div>
 
-                        <div class="form-group w-50">
-                            <label for="order" class="col-form-label">Order</label>
+        <div class="form-group w-50">
 
-                                <input id="order" type="number" class="form-control @error('order') is-invalid @enderror" name="order" value="{{ old('order') }}" autocomplete="order" autofocus>
-
-                                @error('order')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
-                        </div>
-
-                        <div class="form-group w-50">
-
-                            <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="checkbox" id="limited" value="1" name="limited">
-                                <label class="form-check-label" for="limited">Limited?</label>
-                            </div>
-                        </div>
-                        <div class="form-group mb-0">
-                                <button type="submit" class="btn btn-primary">
-                                    Submit
-                                </button>
-                        </div>
-                    </form>
+            <div class="form-check form-check-inline">
+                <input class="form-check-input" type="checkbox" id="limited" value="1" name="limited">
+                <label class="form-check-label" for="limited">Limited?</label>
+            </div>
+        </div>
+        <div class="form-group mb-0">
+                <button type="submit" class="btn btn-primary">
+                    Submit
+                </button>
+        </div>
+    </form>
 
 
 
 
-    <script>
-        document.getElementById('products-side-link').classList.add('active');
-    </script>
+</div>
 @endsection

@@ -1,4 +1,4 @@
-body#admin{
+body#admin #app{
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
     grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
@@ -175,6 +175,16 @@ body#admin{
         }
     
     
+    .sortable-drag{
+        opacity: 0;
+    }
+    .my-handle{
+        cursor: pointer;
+        display: flex;
+        justify-content: center;
+        color: #82b6aa;
+        font-size: 1.5em;
+    }
     
 }
 

@@ -22,16 +22,18 @@
 </div> --}}
 
 
-<div class="d-flex align-items-center justify-content-between">
-    <h1>Home</h1>
-    {{-- <a href="/admin/products/create" type="button" class="button">
-        <i class="fas fa-plus"></i>
-    </a> --}}
+<div for='home' class="cms-page">
+    <div class="d-flex align-items-center justify-content-between">
+        <h1>Home</h1>
+        {{-- <a href="/admin/products/create" type="button" class="button">
+            <i class="fas fa-plus"></i>
+        </a> --}}
+    </div>
+    
 </div>
-
-<script>
+{{-- <script>
     document.getElementById('home-side-link').classList.add('active');
-</script>
+</script> --}}
 
 
 @endsection
