@@ -18,8 +18,11 @@ window.Vue = require('vue');
 
 // const files = require.context('./', true, /\.vue$/i)
 // files.keys().map(key => Vue.component(key.split('/').pop().split('.')[0], files(key).default))
+Vue.component('product-images-draggable', require('./components/admin/ProductImagesDraggable.vue').default);
 
-Vue.component('products-draggable', require('./components/ProductsDraggable.vue').default);
+Vue.component('products-draggable', require('./components/admin/ProductsDraggable.vue').default);
+Vue.component('text-editor-tip-tap', require('./components/admin/TextEditorTipTap.vue').default);
+
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to

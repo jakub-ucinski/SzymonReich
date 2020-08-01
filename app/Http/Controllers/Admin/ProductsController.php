@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Product;
+use App\ProductImage;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use App\Http\Controllers\Controller;
@@ -62,7 +63,11 @@ class ProductsController extends Controller
                 if($check)
                 {
                     $image_url = $image->store('uploads', 'public');
-                    $product->images()->create(['image' => $image_url]);
+                    $product->images()->create([
+                        'image' => $image_url,
+                        'order' => count(ProductImage::all())+1
+
+                    ]);
                 
                 }else{
                     $flag = true;
@@ -124,7 +129,11 @@ class ProductsController extends Controller
                 if($check)
                 {
                     $image_url = $image->store('uploads', 'public');
-                    $product->images()->create(['image' => $image_url]);
+                    // dd(count(ProductImage::all())+1);
+                    $product->images()->create([
+                        'image' => $image_url,
+                        'order' => count(Product::all())+1,
+                    ]);
                 
                 }else{
                     $flag = true;
@@ -146,8 +155,14 @@ class ProductsController extends Controller
     public function updateall(Request $request)
     {
         
-        Product::truncate();
+        //Product::truncate();
+        // $productImages=ProductImage::get();
+
         foreach ($request->products as $product) {
+            $productImages=ProductImage::where('product_id', $product['id'])->get();
+
+            // dd($product::with('images')->get());
+            Product::where('id', $product['id'])->delete();
             Product::create([
                 'id' => $product['id'],
                 'title' => $product['title'],
@@ -157,8 +172,19 @@ class ProductsController extends Controller
                 'order' => $product['order'],
                 'limited' => isset($product['limited']) ? true : false
                 ]);
+
+            
+            foreach ($productImages as $productImage) {
+                $productImage::create([
+                    'id' => $productImage['id'],
+                    'product_id' => $productImage['product_id'],
+                    'image' => $productImage['image'],
+                    'order' => $productImage['order'],
+                ]);
+            }
+
         }
-        return response('Update Successful', 200);
+        return response('Update Successful', 200)->with($product::with('images')->get());
     }
 
 

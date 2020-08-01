@@ -108,7 +108,7 @@
                   <!-- <li class='navbar-item nav-item'><a href="#" class="nav-link">|</a></li> -->
                   <li id='shop-li' class='navbar-item nav-item'><a href="/shop" class="nav-link hvr-backward"><i class="fas fa-shopping-cart"></i>Sklep</a></li>
 
-                  @guest
+                  {{-- @guest
                             <li class="nav-item">
                                 <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
                             </li>
@@ -136,7 +136,7 @@
                                 </div>
                             </li>
                         @endguest
-        
+         --}}
                   <!-- <li><a href="#header" class="js-scroll-trigger">Test</a></li> -->
                 </ul>
               </div>
@@ -144,7 +144,7 @@
         </nav>
 
         @yield('content')
-        @include('layouts.landing.partials.footer')
+        @include('partials.footer')
         <script src="{{ asset('js/app.js') }}"></script>
         {{-- <script src="/public/js/app.js"></script> --}}
 

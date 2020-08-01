@@ -143,16 +143,20 @@
     
                     </li>
     
-                    <p>
-                        Pages
-                    </p>
+                    {{-- <p>
+                        Shop    
+                    </p> --}}
     
                     <li class="nav-item" for="pages-products" id="products-side-link">
                       <a class="nav-link" href="/admin/products">Products
-                        <i class="fas fa-caret-right"></i>
-                    </a>
+                            <i class="fas fa-caret-right"></i>
+                        </a>
                     </li>
-    
+                    <li class="nav-item" for="pages-pages" id="products-side-link">
+                        <a class="nav-link" href="/admin/pages">Pages
+                              <i class="fas fa-caret-right"></i>
+                        </a>
+                    </li>                 
                     
                   </ul>
               </nav>

@@ -183,7 +183,7 @@
                         </div>
                     </form>
 
-                    <div class="img-index">
+                    {{-- <div class="img-index">
                         @foreach ($product->images as $image)
                             <div class="d-flex w-100 my-2">
                                 <img src="/storage/{{ $image->image }}" alt="" srcset="">
@@ -198,7 +198,11 @@
                                 </form>
                             </div>
                         @endforeach
-                    </div>
+                    </div> --}}
+                    @php
+                        $images = $product->images
+                    @endphp
+                    <product-images-draggable :product="{{ $product }}"  :productImages="{{ $product->images }}"></product-images-draggable>
                     
 </div>
 @endsection

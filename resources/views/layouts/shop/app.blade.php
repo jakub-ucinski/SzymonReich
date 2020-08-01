@@ -87,8 +87,9 @@
         @include('layouts.shop.partials.head')
     </head>
 
-    <body data-spy="scroll" data-target='#main-nav' data-offset='100'>
-        
+    <body data-spy="scroll" data-target='#main-nav' data-offset='100' id="shop">
+        <div id="app" class="h-100">
+
         <nav id="main-nav" class="navbar navbar-expand-lg fixed-top navbar-light">
             <div class="container-fluid">
         
@@ -103,12 +104,14 @@
         
               <div class='navbar-collapse collapse' id="navbarContent">
                 <ul class="navbar-nav ml-auto" >
-                  <li class='navbar-item nav-item'><a href="/#about_section" class="nav-link js-scroll-trigger hvr-backward"><i class="fas fa-question"></i></i>O mnie</a></li>
-                  <li class='navbar-item nav-item'><a href="/#contact-section" class="nav-link js-scroll-trigger hvr-backward"><i class="fas fa-envelope"></i>Kontakt</a></li>
+                  <li class='navbar-item nav-item'><a href="/" class="nav-link js-scroll-trigger hvr-backward"><i class="fas fa-home"></i></i>Strona Główna</a></li>
+                  {{-- <li class='navbar-item nav-item'><a href="/#contact-section" class="nav-link js-scroll-trigger hvr-backward"><i class="fas fa-envelope"></i>Kontakt</a></li> --}}
                   <!-- <li class='navbar-item nav-item'><a href="#" class="nav-link">|</a></li> -->
-                  <li id='shop-li' class='navbar-item nav-item'><a href="/shop" class="nav-link hvr-backward"><i class="fas fa-shopping-cart"></i>Sklep</a></li>
+                  <li class='navbar-item nav-item'><a href="/shop" class="nav-link hvr-backward"><i class="fas fa-check"></i>Regulamin</a></li>
+                  <li class='navbar-item nav-item'><a href="/shop" class="nav-link hvr-backward"><i class="fas fa-lock"></i>Klauzura Poufności</a></li>
 
-                  @guest
+
+                  {{-- @guest
                             <li class="nav-item">
                                 <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
                             </li>
@@ -135,7 +138,7 @@
                                     </form>
                                 </div>
                             </li>
-                        @endguest
+                        @endguest --}}
         
                   <!-- <li><a href="#header" class="js-scroll-trigger">Test</a></li> -->
                 </ul>
@@ -144,7 +147,8 @@
         </nav>
 
         @yield('content')
-        @include('layouts.shop.partials.footer')
+        @include('partials.footer')
+        </div>
         <script src="{{ asset('js/app.js') }}"></script>
         {{-- <script src="/public/js/app.js"></script> --}}
 

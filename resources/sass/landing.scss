@@ -965,6 +965,20 @@ footer{
   height: fit-content;
   border-top: 11px solid #993f2b;
   padding: 10px 0px;
+  h3{
+    font-size: 1em;
+    /* width: 100%; */
+    margin-bottom: 0px;
+    color: #ffffff;
+  }
+  a{
+    font-size: 0.8em;
+    color: white;
+  
+    &:hover{
+      color: white;
+    }
+  }
 }
 
 footer #copyright{

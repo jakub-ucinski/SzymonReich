@@ -1,0 +1,55 @@
+body#pages{
+    background-color: #fdfdfd;
+
+    .app-wrapper{
+        position: relative;
+        min-height: 100vh;
+    
+    .navbar-wrapper{
+        position: relative;
+        height: 100px;
+        box-shadow: 0px 18px 12px 0px #ececec;
+        background-color: white;
+        nav{
+            background-color: white;
+        }
+
+        
+    }
+    .content-wrapper{
+        padding-bottom: 175px;
+
+        margin-top: 50px;
+        h1, h2, h3{
+            color: #993e2a;
+            text-transform: uppercase;
+        }
+
+        h1{
+            font-size: 4.5em;
+            font-weight: 700;
+        }
+        h2{
+            font-weight: 600;
+            font-size: 3.5em;
+        }
+
+        h3{
+            font-weight: 500;
+            font-size: 2.5em;
+        }
+        p{
+            color: black;
+        }
+
+        
+            
+    }
+    footer {
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        height: 125px;            /* Footer height */
+      }
+    }
+}

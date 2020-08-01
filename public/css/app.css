@@ -36512,6 +36512,22 @@ footer {
   padding: 10px 0px;
 }
 
+footer h3 {
+  font-size: 1em;
+  /* width: 100%; */
+  margin-bottom: 0px;
+  color: #ffffff;
+}
+
+footer a {
+  font-size: 0.8em;
+  color: white;
+}
+
+footer a:hover {
+  color: white;
+}
+
 footer #copyright {
   padding: 0;
   color: #ffffff;
@@ -36813,12 +36829,309 @@ footer .bold {
   }
 }
 
+body#pages {
+  background-color: #fdfdfd;
+}
+
+body#pages .app-wrapper {
+  position: relative;
+  min-height: 100vh;
+}
+
+body#pages .app-wrapper .navbar-wrapper {
+  position: relative;
+  height: 100px;
+  box-shadow: 0px 18px 12px 0px #ececec;
+  background-color: white;
+}
+
+body#pages .app-wrapper .navbar-wrapper nav {
+  background-color: white;
+}
+
+body#pages .app-wrapper .content-wrapper {
+  padding-bottom: 175px;
+  margin-top: 50px;
+}
+
+body#pages .app-wrapper .content-wrapper h1,
+body#pages .app-wrapper .content-wrapper h2,
+body#pages .app-wrapper .content-wrapper h3 {
+  color: #993e2a;
+  text-transform: uppercase;
+}
+
+body#pages .app-wrapper .content-wrapper h1 {
+  font-size: 4.5em;
+  font-weight: 700;
+}
+
+body#pages .app-wrapper .content-wrapper h2 {
+  font-weight: 600;
+  font-size: 3.5em;
+}
+
+body#pages .app-wrapper .content-wrapper h3 {
+  font-weight: 500;
+  font-size: 2.5em;
+}
+
+body#pages .app-wrapper .content-wrapper p {
+  color: black;
+}
+
+body#pages .app-wrapper footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 125px;
+  /* Footer height */
+}
+
+body#shop #app #main-nav {
+  background-color: #0000004f;
+}
+
+body#shop #app #main-nav .nav-link {
+  color: #D8B58D;
+}
+
+body#shop #app #main-nav .nav-link:hover {
+  color: #D8B58D;
+}
+
+body#shop #app .hero-background {
+  background-image: url("/img/shop/ab67616d0000b273c093346b4cc20490f720c735.png");
+  height: -webkit-max-content;
+  height: -moz-max-content;
+  height: max-content;
+  width: 100vw;
+  background-position-y: 50%;
+  -webkit-backdrop-filter: blur(2px);
+          backdrop-filter: blur(2px);
+  background-size: cover;
+  position: relative;
+  background-color: #000000bf;
+  background-blend-mode: overlay;
+  padding-top: 120px;
+  padding-bottom: 120px;
+}
+
+body#shop #app .hero-img {
+  height: 500px;
+  position: relative;
+  display: flex;
+  /* justify-self: center; */
+  margin: auto;
+}
+
+body#shop #app .products {
+  width: 100%;
+  padding-top: 120px;
+  padding-bottom: 120px;
+  background-color: black;
+  justify-content: center;
+}
+
+body#shop #app .products .product {
+  background-color: #D8B58D;
+  padding: 80px 50px;
+}
+
+body#shop #app .products .product .title {
+  margin: 30px 0;
+  font-weight: 600;
+  font-size: 1.3em;
+  color: white;
+}
+
+body#shop #app .products .product .btn-show-product {
+  color: #fff;
+  background-color: #993e2a;
+  border-color: #993e2a;
+}
+
 body#admin #app {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
   grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
   gap: 1px 1px;
   grid-template-areas: "navbar navbar navbar navbar navbar" "nav-left content content content content" "nav-left content content content content" "nav-left content content content content" "nav-left content content content content" "nav-left content content content content" "nav-left content content content content" "nav-left content content content content";
+}
+
+body#admin #app .editor {
+  padding: 20px;
+  outline: none;
+  border: 1px solid;
+  position: relative;
+}
+
+body#admin #app .editor .ProseMirror {
+  outline: none;
+}
+
+body#admin #app .editor__content {
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  word-break: break-word;
+}
+
+body#admin #app .editor__content * {
+  caret-color: currentColor;
+}
+
+body#admin #app .editor__content pre {
+  padding: 0.7rem 1rem;
+  border-radius: 5px;
+  background: #000000;
+  color: #ffffff;
+  font-size: 0.8rem;
+  overflow-x: auto;
+}
+
+body#admin #app .editor__content pre code {
+  display: block;
+}
+
+body#admin #app .editor__content p code {
+  padding: 0.2rem 0.4rem;
+  border-radius: 5px;
+  font-size: 0.8rem;
+  font-weight: bold;
+  background: rgba(0, 0, 0, 0.1);
+  color: rgba(0, 0, 0, 0.8);
+}
+
+body#admin #app .editor__content ul,
+body#admin #app .editor__content ol {
+  padding-left: 1rem;
+}
+
+body#admin #app .editor__content li > p,
+body#admin #app .editor__content li > ol,
+body#admin #app .editor__content li > ul {
+  margin: 0;
+}
+
+body#admin #app .editor__content a {
+  color: inherit;
+}
+
+body#admin #app .editor__content blockquote {
+  border-left: 3px solid rgba(0, 0, 0, 0.1);
+  color: rgba(0, 0, 0, 0.8);
+  padding-left: 0.8rem;
+  font-style: italic;
+}
+
+body#admin #app .editor__content blockquote p {
+  margin: 0;
+}
+
+body#admin #app .editor__content img {
+  max-width: 100%;
+  border-radius: 3px;
+}
+
+body#admin #app .editor__content table {
+  border-collapse: collapse;
+  table-layout: fixed;
+  width: 100%;
+  margin: 0;
+  overflow: hidden;
+}
+
+body#admin #app .editor__content table td,
+body#admin #app .editor__content table th {
+  min-width: 1em;
+  border: 2px solid #dddddd;
+  padding: 3px 5px;
+  vertical-align: top;
+  box-sizing: border-box;
+  position: relative;
+}
+
+body#admin #app .editor__content table td > *,
+body#admin #app .editor__content table th > * {
+  margin-bottom: 0;
+}
+
+body#admin #app .editor__content table th {
+  font-weight: bold;
+  text-align: left;
+}
+
+body#admin #app .editor__content table .selectedCell:after {
+  z-index: 2;
+  position: absolute;
+  content: "";
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  background: rgba(200, 200, 255, 0.4);
+  pointer-events: none;
+}
+
+body#admin #app .editor__content table .column-resize-handle {
+  position: absolute;
+  right: -2px;
+  top: 0;
+  bottom: 0;
+  width: 4px;
+  z-index: 20;
+  background-color: #adf;
+  pointer-events: none;
+}
+
+body#admin #app .editor__content .tableWrapper {
+  margin: 1em 0;
+  overflow-x: auto;
+}
+
+body#admin #app .editor__content .resize-cursor {
+  cursor: ew-resize;
+  cursor: col-resize;
+}
+
+body#admin #app .editor .menubar {
+  margin-bottom: 1rem;
+  transition: visibility 0.2s 0.4s, opacity 0.2s 0.4s;
+}
+
+body#admin #app .editor .menubar.is-hidden {
+  visibility: hidden;
+  opacity: 0;
+}
+
+body#admin #app .editor .menubar.is-focused {
+  visibility: visible;
+  opacity: 1;
+  transition: visibility 0.2s, opacity 0.2s;
+}
+
+body#admin #app .editor .menubar__button {
+  font-weight: bold;
+  display: inline-flex;
+  background: transparent;
+  border: 0;
+  color: #000000;
+  padding: 0.2rem 0.5rem;
+  margin-right: 0.2rem;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+body#admin #app .editor .menubar__button:hover {
+  background-color: rgba(0, 0, 0, 0.05);
+}
+
+body#admin #app .editor .menubar__button.is-active {
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+body#admin #app .editor .menubar spanbody#admin #app .editor .menubar__button {
+  font-size: 13.3333px;
 }
 
 body#admin #app nav.navbar {
