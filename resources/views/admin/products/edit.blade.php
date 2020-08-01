@@ -199,10 +199,12 @@
                             </div>
                         @endforeach
                     </div> --}}
-                    @php
-                        $images = $product->images
-                    @endphp
-                    <product-images-draggable :product="{{ $product }}"  :productImages="{{ $product->images }}"></product-images-draggable>
+                    {{-- @php
+                    // dd($product->images);
+                        $images = $product->images;
+                        //dd($images);
+                    @endphp --}}
+                    <product-images-draggable :product='{{ $product }}' :productimages='{{ $product->images }}'></product-images-draggable>
                     
 </div>
 @endsection

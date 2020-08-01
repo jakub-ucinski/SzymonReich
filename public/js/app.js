@@ -4512,14 +4512,14 @@ __webpack_require__.r(__webpack_exports__);
   components: {
     draggable: vuedraggable__WEBPACK_IMPORTED_MODULE_0___default.a
   },
-  props: ['product', 'productImages'],
+  props: ['product', 'productimages'],
   data: function data() {
     var _this = this;
 
     return {
       // product: this.product,
-      productImagesNew: Object.keys(this.productImages).map(function (i) {
-        return _this.productImages[i];
+      productImagesNew: Object.keys(this.productimages).map(function (i) {
+        return _this.productimages[i];
       }),
       // productImagesNew: [],
       // productimages : axios.get('/admin/productimages/index'),
@@ -4547,7 +4547,7 @@ __webpack_require__.r(__webpack_exports__);
         productImage.order = index + 1;
       });
       axios.put('/admin/productimages/updateall', {
-        productImages: this.productImagesNew
+        productimages: this.productImagesNew
       });
     }
   }

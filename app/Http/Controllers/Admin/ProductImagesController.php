@@ -14,10 +14,11 @@ class ProductImagesController extends Controller
     }
     public function index(Request $request)
     {
-        $productImages = ProductImage::where('product_id', '=', $request->productid)->orderBy('order')->get();
+        $productimages = ProductImage::where('product_id', '=', $request->productid)->orderBy('order')->get();
         // $product = $request->productid;
+        dd($productimages);
         
-        return $productImages;
+        return $productimages;
     }
     
     
@@ -33,15 +34,16 @@ class ProductImagesController extends Controller
     public function updateall(Request $request)
     {
         $flag=false;
-        foreach ($request->productImages as $productImage) {
+        //dd($request->productimages);
+        foreach ($request->productimages as $productimage) {
             if (!$flag) {
-                ProductImage::where('product_id', $productImage['product_id'])->delete();
+                ProductImage::where('product_id', $productimage['product_id'])->delete();
             }
             ProductImage::create([
-                'id' => $productImage['id'],
-                'product_id' => $productImage['product_id'],
-                'image' => $productImage['image'],
-                'order' => $productImage['order']
+                'id' => $productimage['id'],
+                'product_id' => $productimage['product_id'],
+                'image' => $productimage['image'],
+                'order' => $productimage['order']
                 ]);
                 $flag=true;
         }
