@@ -84,10 +84,10 @@
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
     <head>
         
-        @include('layouts.shop.partials.head')
+        @include('layouts.order.partials.head')
     </head>
 
-    <body data-spy="scroll" data-target='#main-nav' data-offset='100' id="shop">
+    <body data-spy="scroll" data-target='#main-nav' data-offset='100' id="order">
         <div id="app" class="h-100">
 
         <nav id="main-nav" class="navbar navbar-expand-lg fixed-top navbar-light">

@@ -15,9 +15,9 @@
           <tr>
             <th>Title</th>
             <th>Description</th>
-            <th>Price</th>
+            <!-- <th>Price</th> -->
             <th>Images</th>
-            <th>Stock</th>
+            <!-- <th>Stock</th> -->
             <th>Limited</th>
             <th>Options</th>
             <th>Sort</th>
@@ -29,12 +29,12 @@
         <tr v-for="(product, index) in productsNew">
             <td>{{product.title}}</td>
             <td>{{product.description}}</td>
-            <td>{{product.price}}</td>
+            <!-- <td>{{product.price}}</td> -->
             <td>
                 <img v-for="image in product.images" class="m-2" :src="'/storage/' + image.image" alt="" srcset="">
             </td>
     
-            <td>{{product.stock}}</td>
+            <!-- <td>{{product.stock}}</td> -->
             <td v-if="product.limited">true</td>
             <td v-else>false</td>
             <td class="d-flex">

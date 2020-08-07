@@ -124,7 +124,7 @@
                 @enderror
         </div>
 
-        <div class="form-group w-50">
+        {{-- <div class="form-group w-50">
             <label for="price" class="col-form-label">Price</label>
 
                 <input id="price" type="text" class="form-control @error('price') is-invalid @enderror" name="price" value="{{ old('price') }}" required autocomplete="price" autofocus>
@@ -134,7 +134,7 @@
                         <strong>{{ $message }}</strong>
                     </span>
                 @enderror
-        </div>
+        </div> --}}
 
         <div class="form-group w-50">
             <label for="images" class="col-form-label">Images</label>
@@ -154,7 +154,7 @@
                 @endif
         </div>
 
-        <div class="form-group w-50">
+        {{-- <div class="form-group w-50">
             <label for="stock" class="col-form-label">Stock</label>
 
                 <input id="stock" type="number" class="form-control @error('stock') is-invalid @enderror" name="stock" value="{{ old('stock') }}" required autocomplete="stock" autofocus>
@@ -164,7 +164,7 @@
                         <strong>{{ $message }}</strong>
                     </span>
                 @enderror
-        </div>
+        </div> --}}
 
         <div class="form-group w-50">
 

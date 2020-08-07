@@ -79647,8 +79647,6 @@ var render = function() {
             _vm._v(" "),
             _c("td", [_vm._v(_vm._s(product.description))]),
             _vm._v(" "),
-            _c("td", [_vm._v(_vm._s(product.price))]),
-            _vm._v(" "),
             _c(
               "td",
               _vm._l(product.images, function(image) {
@@ -79659,8 +79657,6 @@ var render = function() {
               }),
               0
             ),
-            _vm._v(" "),
-            _c("td", [_vm._v(_vm._s(product.stock))]),
             _vm._v(" "),
             product.limited
               ? _c("td", [_vm._v("true")])
@@ -79746,11 +79742,7 @@ var staticRenderFns = [
         _vm._v(" "),
         _c("th", [_vm._v("Description")]),
         _vm._v(" "),
-        _c("th", [_vm._v("Price")]),
-        _vm._v(" "),
         _c("th", [_vm._v("Images")]),
-        _vm._v(" "),
-        _c("th", [_vm._v("Stock")]),
         _vm._v(" "),
         _c("th", [_vm._v("Limited")]),
         _vm._v(" "),

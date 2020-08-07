@@ -32,9 +32,9 @@ class ProductsController extends Controller
         $data = $request->validate([
             'title' => ['required','max:255'],
             'description' => ['required','max:2500'],
-            'price' => ['regex:/^(?=.+)(?:[1-9]\d*|0)?(?:\.\d+)?$/', 'required', 'max:10'],
+            // 'price' => ['regex:/^(?=.+)(?:[1-9]\d*|0)?(?:\.\d+)?$/', 'required', 'max:10'],
             'images' => 'required',
-            'stock' => ['required', 'integer'],
+            // 'stock' => ['required', 'integer'],
             'limited' => ''
         ]);
 
@@ -43,8 +43,8 @@ class ProductsController extends Controller
         $product = Product::create([
             'title' => $data['title'],
             'description' => $data['description'],
-            'price' => $data['price'],
-            'stock' => $data['stock'],
+            // 'price' => $data['price'],
+            // 'stock' => $data['stock'],
             'order' => count(Product::all())+1,
             'limited' => isset($data['limited']) ? true : false
             ]);
@@ -101,17 +101,17 @@ class ProductsController extends Controller
         $data = $request->validate([
             'title' => ['required','max:255'],
             'description' => ['required','max:2500'],
-            'price'=> ['regex:/^(?=.+)(?:[1-9]\d*|0)?(?:\.\d+)?$/', 'max:10'],
+            // 'price'=> ['regex:/^(?=.+)(?:[1-9]\d*|0)?(?:\.\d+)?$/', 'max:10'],
             'images'=> '',
-            'stock' => ['required', 'integer'],
+            // 'stock' => ['required', 'integer'],
             'limited' => ''
         ]);
 
         $product->update([
             'title' => $data['title'],
             'description' => $data['description'],
-            'price' => $data['price'],
-            'stock' => $data['stock'],
+            // 'price' => $data['price'],
+            // 'stock' => $data['stock'],
             'limited' => isset($data['limited']) ? true : false
             ]);
 
@@ -167,8 +167,8 @@ class ProductsController extends Controller
                 'id' => $product['id'],
                 'title' => $product['title'],
                 'description' => $product['description'],
-                'price' => $product['price'],
-                'stock' => $product['stock'],
+                // 'price' => $product['price'],
+                // 'stock' => $product['stock'],
                 'order' => $product['order'],
                 'limited' => isset($product['limited']) ? true : false
                 ]);

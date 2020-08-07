@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Artisan;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,8 +14,43 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/shop/{product}', 'ShopController@show');
-Route::get('/shop', 'ShopController@index');
+
+
+
+Route::group(['prefix' => 'shop'], function () {
+    
+    Route::get('/{product}', 'ShopController@show');
+    Route::get('', 'ShopController@index')->name('shop.index');
+
+
+
+});
+
+
+
+Route::group(['prefix' => 'order'], function () {
+    
+    Route::get('/create', 'OrdersController@create')->name('order.create');
+    Route::post('', 'OrdersController@store')->name('order.store');
+    Route::post('/verify', 'OrdersController@verify');
+
+
+
+});
+
+Route::get('/migrate', function () {
+    return Artisan::call('migrate:fresh', ["--force" => true ]);
+})->middleware('auth');
+
+Route::get('/migratefresh', function () {
+    return Artisan::call('migrate:fresh', ["--force" => true ]);
+})->middleware('auth');
+
+Route::get('/clear-cache', function() {
+    $exitCode = Artisan::call('config:cache');
+    return 'DONE'; //Return anything
+})->middleware('auth');
+
 
 Route::post('/contact', 'LandingController@contact');
 Route::get('/', 'LandingController@index');
@@ -33,6 +69,8 @@ Route::group(['prefix' => 'admin/pages'], function () {
     Route::post('', 'Admin\PagesController@store')->name('pages.store');
     Route::get('/{page}/edit', 'Admin\PagesController@edit')->name('pages.edit');
     Route::patch('/{page}', 'Admin\PagesController@update')->name('pages.update');
+    Route::delete('/{page}', 'Admin\PagesController@destroy')->name('pages.destroy');
+
 
 });
 
@@ -45,33 +83,38 @@ Route::group(['prefix' => 'pages'], function () {
 
 
 
-
-Route::group(['prefix' => 'admin'], function () {
-    Route::put('/products/updateall', 'Admin\ProductsController@updateall')->name('products.updateall');
+Route::group(['prefix' => 'admin/products'], function () {
+    Route::put('/updateall', 'Admin\ProductsController@updateall')->name('products.updateall');
     // Route::put('/products/updateall', function ()
     // {
     //     return 'success';
     // });
 
 
-    Route::patch('/products/{product}', 'Admin\ProductsController@update')->name('products.update');
-    Route::get('/products/{product}/edit', 'Admin\ProductsController@edit')->name('products.edit');
-    Route::delete('/products/{product}', 'Admin\ProductsController@destroy')->name('products.destroy');
-    Route::post('/products', 'Admin\ProductsController@store')->name('products.store');
-    Route::get('/products/create', 'Admin\ProductsController@create')->name('products.create');
-    Route::get('/products', 'Admin\ProductsController@index')->name('products.index');
+    Route::patch('/{product}', 'Admin\ProductsController@update')->name('products.update');
+    Route::get('/{product}/edit', 'Admin\ProductsController@edit')->name('products.edit');
+    Route::delete('/{product}', 'Admin\ProductsController@destroy')->name('products.destroy');
+    Route::post('', 'Admin\ProductsController@store')->name('products.store');
+    Route::get('/create', 'Admin\ProductsController@create')->name('products.create');
+    Route::get('', 'Admin\ProductsController@index')->name('products.index');
 
 
-    Route::get('/productimages/index', 'Admin\ProductImagesController@index')->name('productImages.index');
-    Route::put('/productimages/updateall', 'Admin\ProductImagesController@updateall')->name('productImages.updateall');
-    Route::delete('/productimages/{productimage}', 'Admin\ProductImagesController@destroy')->name('productImages.destroy');
-
-
-    Route::get('/', 'AdminController@index')->name('admin');
 });
 
 
 
+Route::group(['prefix' => 'admin/productimages'], function () {
+    
+    Route::get('/index', 'Admin\ProductImagesController@index')->name('productImages.index');
+    Route::put('/updateall', 'Admin\ProductImagesController@updateall')->name('productImages.updateall');
+    Route::delete('/{productimage}', 'Admin\ProductImagesController@destroy')->name('productImages.destroy');
+
+
+});
+
+Route::group(['prefix' => 'admin'], function () {
+    Route::get('/', 'AdminController@index')->name('admin');
+});
 
 
 
