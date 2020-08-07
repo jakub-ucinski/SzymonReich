@@ -2,16 +2,11 @@
 
 namespace App\Http\Controllers\Admin;
 
-use App\Page;
-use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use Illuminate\Http\Request;
 
-class PagesController extends Controller
+class VariationCategoriesController extends Controller
 {
-    public function __construct()
-    {
-        $this->middleware('auth');
-    }
     /**
      * Display a listing of the resource.
      *
@@ -19,8 +14,7 @@ class PagesController extends Controller
      */
     public function index()
     {
-        $pages = Page::get();
-        return view('admin.pages.index', compact('pages'));
+        //
     }
 
     /**
@@ -30,8 +24,7 @@ class PagesController extends Controller
      */
     public function create()
     {
-        return view('admin.pages.create');
-
+        //
     }
 
     /**
@@ -42,21 +35,7 @@ class PagesController extends Controller
      */
     public function store(Request $request)
     {
-    
-        $data = $request->validate([
-            'title' => ['required','max:255'],
-            'text' => '',
-        ]);
-        // dd($data);
-
-        
-        $page = Page::create([
-            'title' => $data['title'],
-            'text' => $data['text']
-            ]);
-        
-        return redirect()->route('pages.index');
-
+        //
     }
 
     /**
@@ -76,10 +55,9 @@ class PagesController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit(Page $page)
+    public function edit($id)
     {
-        return view('admin.pages.edit', compact('page'));
-
+        //
     }
 
     /**
@@ -89,20 +67,9 @@ class PagesController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Page $page, Request $request)
+    public function update(Request $request, $id)
     {
-
-        $data = $request->validate([
-            'title' => ['required','max:255'],
-            'text' => '',
-        ]);
-
-        $page->update([
-            'title' => $data['title'],
-            'text' => $data['text']
-            ]);
-        return redirect()->route('pages.index');
-
+        //
     }
 
     /**
@@ -111,9 +78,8 @@ class PagesController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Page $page)
+    public function destroy($id)
     {
-        $page->delete();
-        return redirect()->route('pages.index');
+        //
     }
 }

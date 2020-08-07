@@ -2,7 +2,7 @@
 
 @section('content')
 
-{{dd($product->images)}}
+{{dd($product)}}
 
 
 

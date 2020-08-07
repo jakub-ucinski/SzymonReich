@@ -1,6 +1,7 @@
 @extends('layouts.shop.app')
 
 @section('content')
+
 {{-- <div class="hero-background"></div> --}}
     <div class="hero-background">
         <img class="hero-img" src="/img/shop/ab67616d0000b273c093346b4cc20490f720c735.png" alt="" srcset="">

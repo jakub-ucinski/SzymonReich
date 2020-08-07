@@ -84,13 +84,13 @@ import draggable from 'vuedraggable'
         },
         props: [
             'product',
-            'productImages'
+            'productimages'
 
         ],
         data(){
                 return{
                 // product: this.product,
-                productImagesNew: Object.keys(this.productImages).map(i => this.productImages[i]),
+                productImagesNew: Object.keys(this.productimages).map(i => this.productimages[i]),
 
                 // productImagesNew: [],
                 // productimages : axios.get('/admin/productimages/index'),
@@ -123,7 +123,7 @@ import draggable from 'vuedraggable'
                 })
 
                 axios.put('/admin/productimages/updateall', {
-                    productImages: this.productImagesNew
+                    productimages: this.productImagesNew
                 })
             }
         }

@@ -3,7 +3,7 @@
 @section('content')
 
 <div for='pages-pages' class="cms-page">
-    <h1>New Page</h1>
+    <h1>{{ $page->title }}</h1>
     <a type="button" href="{{ route('pages.index') }}" class="button mr-2">
         <i class="fas fa-arrow-left"></i>                    
     </a>

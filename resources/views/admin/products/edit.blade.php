@@ -126,7 +126,7 @@
                                 @enderror
                         </div>
 
-                        <div class="form-group w-50">
+                        {{-- <div class="form-group w-50">
                             <label for="price" class="col-form-label">Price</label>
 
                                 <input id="price" type="text" value="{{ $product->price }}" class="form-control @error('price') is-invalid @enderror" name="price" value="{{ old('price') }}" required autocomplete="price" autofocus>
@@ -136,7 +136,7 @@
                                         <strong>{{ $message }}</strong>
                                     </span>
                                 @enderror
-                        </div>
+                        </div> --}}
                         
                         <div class="form-group w-50">
                             <label for="images" class="col-form-label">Images</label>
@@ -156,7 +156,7 @@
                                 @endif
                         </div>
 
-                        <div class="form-group w-50">
+                        {{-- <div class="form-group w-50">
                             <label for="stock" class="col-form-label">Stock</label>
 
                                 <input id="stock" type="number" value="{{ $product->stock }}" class="form-control @error('stock') is-invalid @enderror" name="stock" value="{{ old('stock') }}" required autocomplete="stock" autofocus>
@@ -166,7 +166,7 @@
                                         <strong>{{ $message }}</strong>
                                     </span>
                                 @enderror
-                        </div>
+                        </div> --}}
 
                         <div class="form-group w-50">
 
@@ -199,10 +199,12 @@
                             </div>
                         @endforeach
                     </div> --}}
-                    @php
-                        $images = $product->images
-                    @endphp
-                    <product-images-draggable :product="{{ $product }}"  :productImages="{{ $product->images }}"></product-images-draggable>
+                    {{-- @php
+                    // dd($product->images);
+                        $images = $product->images;
+                        //dd($images);
+                    @endphp --}}
+                    <product-images-draggable :product='{{ $product }}' :productimages='{{ $product->images }}'></product-images-draggable>
                     
 </div>
 @endsection
