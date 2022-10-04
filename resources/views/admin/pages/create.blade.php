@@ -25,7 +25,7 @@
 
 
 
-        <input id="text" type="hidden" name="text" value="{{ old('title') }}">
+        <input id="text" type="hidden" name="text" value="{{ old('text') }}">
                 
 
         <div class="form-group w-50">

@@ -14,5 +14,11 @@ owlCarousel = require('owl.carousel');
 require('slick-carousel');
 typed = require('typed.js');
 
+
+// require('./countdown');
+
+
+require('./albumCoverResize');
 require('./main');
 require('./animation');
+

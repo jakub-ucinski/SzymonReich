@@ -2,17 +2,16 @@
 
 namespace App;
 
-use App\Product;
+use App\CartProduct;
 use Illuminate\Database\Eloquent\Model;
 
 class Order extends Model
 {
     protected $guarded = [];
 
-    public function products()
+    public function cart_products()
     {
-        
-        return $this->hasMany(Product::class);
-
+        return $this->hasMany(CartProduct::class);
     }
+
 }

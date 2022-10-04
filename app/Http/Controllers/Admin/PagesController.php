@@ -31,7 +31,6 @@ class PagesController extends Controller
     public function create()
     {
         return view('admin.pages.create');
-
     }
 
     /**
@@ -42,21 +41,18 @@ class PagesController extends Controller
      */
     public function store(Request $request)
     {
-    
+
         $data = $request->validate([
-            'title' => ['required','max:255'],
+            'title' => ['required', 'max:255'],
             'text' => '',
         ]);
-        // dd($data);
 
-        
         $page = Page::create([
             'title' => $data['title'],
             'text' => $data['text']
-            ]);
-        
-        return redirect()->route('pages.index');
+        ]);
 
+        return redirect()->route('pages.index');
     }
 
     /**
@@ -79,7 +75,6 @@ class PagesController extends Controller
     public function edit(Page $page)
     {
         return view('admin.pages.edit', compact('page'));
-
     }
 
     /**
@@ -93,16 +88,15 @@ class PagesController extends Controller
     {
 
         $data = $request->validate([
-            'title' => ['required','max:255'],
+            'title' => ['required', 'max:255'],
             'text' => '',
         ]);
 
         $page->update([
             'title' => $data['title'],
             'text' => $data['text']
-            ]);
+        ]);
         return redirect()->route('pages.index');
-
     }
 
     /**

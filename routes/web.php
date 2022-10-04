@@ -17,26 +17,28 @@ use Illuminate\Support\Facades\Artisan;
 
 
 
-Route::group(['prefix' => 'shop'], function () {
+Route::group(['prefix' => 'sklep'], function () {
     
-    Route::get('/{product}', 'ShopController@show');
-    Route::get('', 'ShopController@index')->name('shop.index');
+    Route::get('/products', 'ShopController@products');
+    Route::get('', 'ShopController@landing')->name('shop.landing');
 
+    Route::group(['prefix' => 'order'], function () {
+    
+        Route::post('', 'OrdersController@store')->name('order.store');
+        Route::get('/thankyou', 'OrdersController@thankyou');
 
+        Route::post('/verify', 'OrdersController@verify');
+        // Route::get('/webtruck', 'OrdersController@webtruck')->middleware('auth');
+
+    
+    
+    });
 
 });
 
 
 
-Route::group(['prefix' => 'order'], function () {
-    
-    Route::get('/create', 'OrdersController@create')->name('order.create');
-    Route::post('', 'OrdersController@store')->name('order.store');
-    Route::post('/verify', 'OrdersController@verify');
 
-
-
-});
 
 Route::get('/migrate', function () {
     return Artisan::call('migrate:fresh', ["--force" => true ]);
@@ -52,27 +54,19 @@ Route::get('/clear-cache', function() {
 })->middleware('auth');
 
 
+
+
 Route::post('/contact', 'LandingController@contact');
 Route::get('/', 'LandingController@index');
-//Auth::routes();
 
 
 // Authentication Routes...
 Route::group(['prefix' => 'auth'], function () {
+    // Auth::routes(['register' => false]);
     Auth::routes();
-});
-
-Route::group(['prefix' => 'admin/pages'], function () {
-    
-    Route::get('', 'Admin\PagesController@index')->name('pages.index');
-    Route::get('/create', 'Admin\PagesController@create')->name('pages.create');
-    Route::post('', 'Admin\PagesController@store')->name('pages.store');
-    Route::get('/{page}/edit', 'Admin\PagesController@edit')->name('pages.edit');
-    Route::patch('/{page}', 'Admin\PagesController@update')->name('pages.update');
-    Route::delete('/{page}', 'Admin\PagesController@destroy')->name('pages.destroy');
-
 
 });
+
 
 
 Route::group(['prefix' => 'pages'], function () {
@@ -83,31 +77,31 @@ Route::group(['prefix' => 'pages'], function () {
 
 
 
-Route::group(['prefix' => 'admin/products'], function () {
-    Route::put('/updateall', 'Admin\ProductsController@updateall')->name('products.updateall');
-    // Route::put('/products/updateall', function ()
-    // {
-    //     return 'success';
-    // });
+Route::group(['prefix' => 'admin'], function () {
+    Route::put('/products/updateall', 'Admin\ProductsController@updateall')->name('products.updateall');
+    Route::put('/productimages/updateall', 'Admin\ProductImagesController@updateall')->name('productImages.updateall');
+    Route::put('/product/{product}/variationcategory/updateall', 'Admin\ProductVariationCategoriesController@updateall')->name('product.variationcategory.updateall');
+    Route::put('/variationcategories/{variationcategory}/variationoption/updateall', 'Admin\ProductVariationOptionsController@updateall')->name('variationcategories.variationoption.updateall');
+    Route::put('/product/{product}/variation/updateall', 'Admin\ProductVariationsController@updateall')->name('product.variation.updateall');
+    // Route::get('/variation/{variation}/edit', 'Admin\ProductVariationsController@edit')->name('product.variation.edit');
 
 
-    Route::patch('/{product}', 'Admin\ProductsController@update')->name('products.update');
-    Route::get('/{product}/edit', 'Admin\ProductsController@edit')->name('products.edit');
-    Route::delete('/{product}', 'Admin\ProductsController@destroy')->name('products.destroy');
-    Route::post('', 'Admin\ProductsController@store')->name('products.store');
-    Route::get('/create', 'Admin\ProductsController@create')->name('products.create');
-    Route::get('', 'Admin\ProductsController@index')->name('products.index');
+    Route::resource('products', 'Admin\ProductsController')->except(['show']);
+    Route::resource('pages', 'Admin\PagesController')->except(['show']);
 
 
-});
+    Route::resource('products.recommendation', 'Admin\RecommendationsController')->except(['show'])->shallow();
+    Route::resource('products.variationcategory', 'Admin\ProductVariationCategoriesController')->except(['show'])->shallow();
+    Route::post('/variationcategories/{variationcategory}/variationoption', 'Admin\ProductVariationOptionsController@store')->name('variationcategories.variationoption.store');
+
+    Route::resource('variationcategories.variationoption', 'Admin\ProductVariationOptionsController')->except(['show', 'store'])->shallow();
+    Route::resource('products.variation', 'Admin\ProductVariationsController')->except(['show'])->shallow();
+
+    Route::resource('productimages', 'Admin\ProductImagesController')->only([
+        'index', 'destroy'
+    ]);
 
 
-
-Route::group(['prefix' => 'admin/productimages'], function () {
-    
-    Route::get('/index', 'Admin\ProductImagesController@index')->name('productImages.index');
-    Route::put('/updateall', 'Admin\ProductImagesController@updateall')->name('productImages.updateall');
-    Route::delete('/{productimage}', 'Admin\ProductImagesController@destroy')->name('productImages.destroy');
 
 
 });
@@ -115,6 +109,8 @@ Route::group(['prefix' => 'admin/productimages'], function () {
 Route::group(['prefix' => 'admin'], function () {
     Route::get('/', 'AdminController@index')->name('admin');
 });
+
+Route::post('/variations', 'VariationsController@returnVariation');
 
 
 

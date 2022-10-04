@@ -22,12 +22,15 @@ class CreateOrdersTable extends Migration
             $table->text('name');
             $table->text('surname');
             $table->text('email');
+            $table->text('phone');
+
             $table->text('road');
-            $table->integer('houseno');
-            $table->integer('flatno')->nullable();
+            $table->text('houseno');
+            $table->text('flatno')->nullable();
             $table->text('postcode');
             $table->text('city');
             $table->text('country')->nullable();
+            $table->text('message')->nullable();
 
             $table->timestamps();
         });

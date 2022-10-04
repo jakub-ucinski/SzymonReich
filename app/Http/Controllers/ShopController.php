@@ -8,15 +8,17 @@ use Illuminate\Http\Request;
 class ShopController extends Controller
 {
 
-    public function index()
+    public function landing()
     {
         $products = Product::with('images')->orderBy('order')->get();
 
-        return view('shop.index', compact('products'));
+        return view('shop.landing', compact('products'));
     }
 
-    public function show(Product $product)
+    public function products()
     {
-        return view('shop.show', compact('product'));
+        $products = Product::with('images')->orderBy('order')->get();
+
+        return view('shop.products', compact('products'));
     }
 }

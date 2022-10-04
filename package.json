@@ -15,12 +15,12 @@
         "cross-env": "^7.0",
         "jquery": "^3.2",
         "laravel-mix": "^5.0.1",
-        "lodash": "^4.17.13",
+        "lodash": "^4.17.20",
         "popper.js": "^1.12",
         "resolve-url-loader": "^2.3.1",
         "sass": "^1.20.1",
         "sass-loader": "^8.0.0",
-        "vue": "^2.5.17",
+        "vue": "^2.6.11",
         "vue-template-compiler": "^2.6.10"
     },
     "name": "qoqos",
@@ -33,6 +33,7 @@
     "author": "",
     "license": "ISC",
     "dependencies": {
+        "@chenfengyuan/vue-countdown": "^1.1.5",
         "@fortawesome/fontawesome-free": "^5.13.1",
         "animate.css": "^4.1.0",
         "bootstrap": "^4.5.0",
@@ -43,11 +44,14 @@
         "popper": "^1.0.1",
         "popper.js": "^1.16.1",
         "slick-carousel": "^1.8.1",
+        "three": "^0.119.1",
         "tiptap": "^1.29.3",
         "tiptap-extensions": "^1.31.3",
         "typed.js": "^2.0.11",
         "vue-slick": "^1.1.15",
+        "vue-slick-carousel": "^1.0.6",
         "vuedraggable": "^2.24.0",
+        "vuex": "^3.5.1",
         "waypoints": "^4.0.1",
         "wowjs": "^1.1.3"
     }

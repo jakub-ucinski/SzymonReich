@@ -15,8 +15,6 @@ class ProductImagesController extends Controller
     public function index(Request $request)
     {
         $productimages = ProductImage::where('product_id', '=', $request->productid)->orderBy('order')->get();
-        // $product = $request->productid;
-        dd($productimages);
         
         return $productimages;
     }
@@ -34,7 +32,6 @@ class ProductImagesController extends Controller
     public function updateall(Request $request)
     {
         $flag=false;
-        //dd($request->productimages);
         foreach ($request->productimages as $productimage) {
             if (!$flag) {
                 ProductImage::where('product_id', $productimage['product_id'])->delete();

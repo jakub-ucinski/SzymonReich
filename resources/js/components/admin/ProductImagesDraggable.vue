@@ -28,7 +28,8 @@
 
 
 
-
+    <div class="mt-5">
+        <h2>Images</h2>
     <table>
         <colgroup>
             <col>
@@ -73,6 +74,7 @@
         </tr>
         </draggable>
       </table>
+      </div>
 </template>
 
 <script>

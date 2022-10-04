@@ -266,7 +266,7 @@
   // });
   
   $('.chevron_down').on('hover', function(){
-    console.log($(this));
+    // console.log($(this));
     
   })
 

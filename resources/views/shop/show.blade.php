@@ -4,7 +4,5 @@
 
 {{dd($product)}}
 
-
-
 @endsection
 

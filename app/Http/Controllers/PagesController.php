@@ -9,7 +9,6 @@ class PagesController extends Controller
 {
     public function show(Page $page)
     {
-        // dd($page);
         return view('pages.show', compact('page'));
     }
 }

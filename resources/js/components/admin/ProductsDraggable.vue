@@ -89,6 +89,7 @@ import draggable from 'vuedraggable'
                 })
 
                 axios.put('/admin/products/updateall', {
+                    csrf: document.head.querySelector('meta[name="csrf-token"]').content,
                     products: this.productsNew
                 })
             }
