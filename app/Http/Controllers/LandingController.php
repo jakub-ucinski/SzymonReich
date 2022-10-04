@@ -13,14 +13,15 @@ class LandingController extends Controller
     {
         $socialStats = array();
 
+        $googleapiKey = config('googleapi.apiKey');
 
-        $JSON = file_get_contents("https://www.googleapis.com/youtube/v3/playlistItems?part=snippet&playlistId=PL5j10znFxs6kiBRXe7w_hGQW4-k_8JVv0&key=AIzaSyDd4l4MjxSma2XxVew2vkLKIe3rrfABqfE");
+        $JSON = file_get_contents("https://www.googleapis.com/youtube/v3/playlistItems?part=snippet&playlistId=PL5j10znFxs6kiBRXe7w_hGQW4-k_8JVv0&key=$googleapiKey");
         $JSON_Data = json_decode($JSON);
         $totalViews = 0;
         foreach ($JSON_Data->{'items'} as $video) {
             $video_ID = $video->{'snippet'}->{'resourceId'}->{'videoId'};
 
-            $JSON = file_get_contents("https://www.googleapis.com/youtube/v3/videos?part=statistics&id={$video_ID}&key=AIzaSyDd4l4MjxSma2XxVew2vkLKIe3rrfABqfE");
+            $JSON = file_get_contents("https://www.googleapis.com/youtube/v3/videos?part=statistics&id={$video_ID}&key=$googleapiKey");
             $JSON_Data = json_decode($JSON);
             $views = $JSON_Data->{'items'}[0]->{'statistics'}->{'viewCount'};
             $totalViews = $totalViews + $views;
@@ -32,11 +33,11 @@ class LandingController extends Controller
         $JSON_Data = json_decode($JSON);
         $socialStats['instagram']['followers'] = isset($JSON_Data) ? $JSON_Data->graphql->user->edge_followed_by->count : 155000;
         
-        $JSON = file_get_contents("https://www.googleapis.com/youtube/v3/channels?part=statistics&id=UCFN12Qsy0h5kIXWvagUdlRQ&key=AIzaSyDd4l4MjxSma2XxVew2vkLKIe3rrfABqfE");
+        $JSON = file_get_contents("https://www.googleapis.com/youtube/v3/channels?part=statistics&id=UCFN12Qsy0h5kIXWvagUdlRQ&key=$googleapiKey");
         $JSON_Data = json_decode($JSON);
         $socialStats['youtube']['totalViews'] = $JSON_Data->{'items'}['0']->{'statistics'}->{'viewCount'};
 
-        $JSON = file_get_contents("https://www.googleapis.com/youtube/v3/channels?part=statistics&id=UCFN12Qsy0h5kIXWvagUdlRQ&key=AIzaSyDd4l4MjxSma2XxVew2vkLKIe3rrfABqfE");
+        $JSON = file_get_contents("https://www.googleapis.com/youtube/v3/channels?part=statistics&id=UCFN12Qsy0h5kIXWvagUdlRQ&key=$googleapiKey");
         $JSON_Data = json_decode($JSON);
         $socialStats['youtube']['subscribers'] = $JSON_Data->{'items'}['0']->{'statistics'}->{'subscriberCount'};
 
